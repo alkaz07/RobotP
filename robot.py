@@ -33,6 +33,8 @@ class Robot:
             self.pos.x -=1
         elif self.direction == 270:
             self.pos.y -=1
+        else:
+            print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     def do_command(self, cmd):
         if cmd == 'S':
             self.move_forward()
@@ -56,4 +58,18 @@ print('==================================================')
 robby = Robot(0, 0, 0)
 robby.run_program('SSLSLSLSSRSRS')
 
+robo_list = [
+    rob, robby, Robot(-7, -8, 90), Robot(30, 30, 270)
+]
+print('\n------------------ список роботов -------------------')
+print(robo_list)
+for r in robo_list:
+    r.do_command('S')
+print(robo_list)
 
+print('----------------------')
+print(rob)
+rob.direction = 'Vasya'
+rob.move_forward()
+rob.turn_left()
+print(rob)
